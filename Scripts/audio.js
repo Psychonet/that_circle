@@ -131,10 +131,13 @@ function load_sound(url)
 function get_canvas(canvas_id)
 {
 	var canvas_html = document.getElementById(canvas_id);
-	canvas_html.width = canvas_width;
-	canvas_html.height = canvas_height;
+	if(canvas_html)
+	{
+		canvas_html.width = canvas_width;
+		canvas_html.height = canvas_height;
 
-	return canvas_html.getContext("2d");
+		return canvas_html.getContext("2d");
+	}
 }
 
 function draw_osc()
